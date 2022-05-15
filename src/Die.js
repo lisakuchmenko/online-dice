@@ -3,14 +3,10 @@ import './Die.css';
 
 class Die extends Component {
 	render() {
-		const { num } = this.props;
+		const { die } = this.props;
 		return (
 			<div>
-				{num === 2 ? (
-					<i className='fas fa-dice-two die'></i>
-				) : (
-					<i className='fas fa-dice-five die'></i>
-				)}
+				<i className={`fas fa-dice-${die} die`}></i>
 			</div>
 		);
 	}

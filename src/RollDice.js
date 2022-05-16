@@ -1,6 +1,7 @@
 import { Component } from 'react';
 import Die from './Die';
 import './RollDice.css';
+import './index.css';
 
 const dieFace = {
 	1: 'one',
@@ -29,7 +30,7 @@ class RollDice extends Component {
 			<div className='RollDice'>
 				<Die die={this.state.die1} />
 				<Die die={this.state.die2} />
-				<button type='button' onClick={this.roll}>
+				<button type='button' className='btn' onClick={this.roll}>
 					Roll Dice!
 				</button>
 			</div>

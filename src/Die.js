@@ -5,7 +5,7 @@ class Die extends Component {
 	render() {
 		const { die } = this.props;
 		return (
-			<div>
+			<div className='Die'>
 				<i className={`fas fa-dice-${die} die`}></i>
 			</div>
 		);

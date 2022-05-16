@@ -1,4 +1,9 @@
 .die {
-	color: blueviolet;
-	font-size: 90px;
+	color: #0294d7;
+	font-size: 100px;
+}
+
+.Die {
+	display: inline-block;
+	margin: 50px 15px 45px;
 }

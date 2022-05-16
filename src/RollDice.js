@@ -27,8 +27,10 @@ class RollDice extends Component {
 	render() {
 		return (
 			<div className='RollDice'>
-				<Die die={this.state.die1} rolling={this.state.rolling} />
-				<Die die={this.state.die2} rolling={this.state.rolling} />
+				{[...Array(this.props.count).keys()].map((_, i) => (
+					<Die die={this.state.die1} rolling={this.state.rolling} key={i} />
+				))}
+				{/* <Die die={this.state.die2} rolling={this.state.rolling} /> */}
 				<button
 					type='button'
 					className='btn'

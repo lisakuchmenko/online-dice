@@ -1,3 +1,23 @@
 .App {
 	text-align: center;
 }
+
+.heading-main {
+	color: #bba632;
+	font-size: 40px;
+	letter-spacing: 4px;
+	text-shadow: -1px -1px 1px rgba(255, 255, 255, 0.1),
+		1px 1px 1px rgba(0, 0, 0, 0.5);
+}
+
+#die-num {
+	margin-left: 10px;
+	color: #6d7397;
+	border: 1px solid #3b52d3;
+	border-radius: 3px;
+}
+
+label {
+	color: #6d7397;
+	font-size: 18px;
+}

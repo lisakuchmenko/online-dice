@@ -3,10 +3,10 @@ import './Die.css';
 
 class Die extends Component {
 	render() {
-		const { die } = this.props;
+		const { die, rolling } = this.props;
 		return (
 			<div className='Die'>
-				<i className={`fas fa-dice-${die} die`}></i>
+				<i className={`fas fa-dice-${die} die ${rolling && 'rolling'}`}></i>
 			</div>
 		);
 	}

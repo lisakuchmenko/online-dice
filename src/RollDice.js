@@ -3,35 +3,39 @@ import Die from './Die';
 import './RollDice.css';
 import './index.css';
 
-const dieFace = {
-	1: 'one',
-	2: 'two',
-	3: 'three',
-	4: 'four',
-	5: 'five',
-	6: 'six',
-};
-
 class RollDice extends Component {
+	static defaultProps = {
+		sides: ['one', 'two', 'three', 'four', 'five', 'six'],
+	};
 	constructor(props) {
 		super(props);
-		this.state = { die1: 'one', die2: 'five' };
+		this.state = { die1: 'one', die2: 'one', rolling: false };
 		this.roll = this.roll.bind(this);
 	}
 
 	roll() {
-		const rand1 = dieFace[Math.floor(Math.random() * 6 + 1)];
-		const rand2 = dieFace[Math.floor(Math.random() * 6 + 1)];
-		this.setState({ die1: rand1, die2: rand2 });
+		const rand1 = this.props.sides[Math.floor(Math.random() * 6)];
+		const rand2 = this.props.sides[Math.floor(Math.random() * 6)];
+		this.setState({ die1: rand1, die2: rand2, rolling: true });
+
+		// wait 1sec and then set rolling to false
+		setTimeout(() => {
+			this.setState({ rolling: false });
+		}, 1000);
 	}
 
 	render() {
 		return (
 			<div className='RollDice'>
-				<Die die={this.state.die1} />
-				<Die die={this.state.die2} />
-				<button type='button' className='btn' onClick={this.roll}>
-					Roll Dice!
+				<Die die={this.state.die1} rolling={this.state.rolling} />
+				<Die die={this.state.die2} rolling={this.state.rolling} />
+				<button
+					type='button'
+					className='btn'
+					onClick={this.roll}
+					disabled={this.state.rolling}
+				>
+					{this.state.rolling ? 'Loading...' : 'Roll Dice!'}
 				</button>
 			</div>
 		);

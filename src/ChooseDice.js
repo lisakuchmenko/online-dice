@@ -19,7 +19,6 @@ class ChooseDice extends Component {
 			<div className='chooseDice'>
 				<label htmlFor='die-num'>Choose a number of dice:</label>
 				<select name='die-num' id='die-num' onChange={this.handleDropdown}>
-					<option value='0'></option>
 					<option value='1'>1</option>
 					<option value='2'>2</option>
 					<option value='3'>3</option>
